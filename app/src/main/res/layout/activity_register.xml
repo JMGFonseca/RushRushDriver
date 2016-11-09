@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false">
+
+    <Button
+        android:text="Create Account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:id="@+id/createAcc"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passReg"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/emailReg"
+        android:layout_alignStart="@+id/emailReg" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailReg"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/passReg"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="UserName"
+        android:ems="10"
+        android:id="@+id/userNReg"
+        android:layout_above="@+id/emailReg"
+        android:layout_alignLeft="@+id/emailReg"
+        android:layout_alignStart="@+id/emailReg"
+        android:layout_marginBottom="30dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:layout_below="@+id/passReg"
+        android:layout_alignRight="@+id/passReg"
+        android:layout_alignEnd="@+id/passReg"
+        android:layout_marginTop="20dp"
+        android:id="@+id/postalAddReg" />
+
+</RelativeLayout>
