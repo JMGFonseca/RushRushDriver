@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
 
     public DatabaseReference myRef;
 
-    FirebaseUser user;
+    public static FirebaseUser user;
 
     public Driver driver;
 
@@ -55,8 +55,6 @@ public class Login extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d("User", "onAuthStateChanged:signed_in:" + user.getUid());
-                    myRef=FirebaseDatabase.getInstance().getReference("Drivers/" + user.getUid() + "/status/");
-                    myRef.setValue("on");
 
                 } else {
                     // User is signed out
@@ -99,11 +97,6 @@ public class Login extends AppCompatActivity {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-    @Override
-    protected void onDestroy(){
-        myRef=FirebaseDatabase.getInstance().getReference("Drivers/" + user.getUid() + "/status/");
-        myRef.setValue("off");
-    }
 
 
     public void signIn() {
@@ -113,7 +106,7 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d("UserPassEmail", "Sign In successful" + task.isSuccessful());
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(Login.this, noPackages.class));
+                            startActivity(new Intent(Login.this, noPackagesActivity.class));
                         }
 
                         // If sign in fails, display a message to the user. If sign in succeeds

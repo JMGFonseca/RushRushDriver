@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">RushRushDriver</string>
+    <string name="app_name">RushRush Driver</string>
+    <string name="title_activity_no_packages">Packages Pending</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Your Location</string>
+    <string name="title_activity_actual_package_details">Package Details</string>
 </resources>

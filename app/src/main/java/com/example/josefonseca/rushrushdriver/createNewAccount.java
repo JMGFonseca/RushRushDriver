@@ -2,6 +2,7 @@ package com.example.josefonseca.rushrushdriver;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,6 +35,7 @@ public class createNewAccount extends Activity {
     private EditText postalAddReg;
     private EditText userNRegs;
     private Driver driver;
+    private LatLng position;
 
     private DatabaseReference myRef;
 
@@ -73,11 +76,11 @@ public class createNewAccount extends Activity {
                             Toast.makeText(createNewAccount.this, "Authentication failed." + task.getException(),
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            driver=new Driver(username, email, address, 0,0,"off");
+                            driver=new Driver(username, email, address, 0,null,"off", new LatLng(0.0,0.0),0);
                             Fdriver= FirebaseAuth.getInstance().getCurrentUser();
                             myRef=FirebaseDatabase.getInstance().getReference("/Drivers/" + Fdriver.getUid());
                             myRef.setValue(driver);
-                            startActivity(new Intent(createNewAccount.this, noPackages.class));
+                            startActivity(new Intent(createNewAccount.this, noPackagesActivity.class));
                             finish();
 
                         }
