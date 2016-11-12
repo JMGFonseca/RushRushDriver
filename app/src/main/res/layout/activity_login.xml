@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -8,44 +9,69 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.example.josefonseca.rushrushdriver.Login">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_marginBottom="178dp"
-        android:id="@+id/passLogin"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:background="@drawable/shape"
+        android:textStyle="normal|bold"
+        android:hint="Email Address"
         android:id="@+id/mailLogin"
         android:layout_above="@+id/passLogin"
-        android:layout_alignLeft="@+id/passLogin"
-        android:layout_alignStart="@+id/passLogin" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="75dp"
-        android:id="@+id/loginBut" />
+        android:layout_alignBaseline="@+id/createNew"
+        android:layout_alignBottom="@+id/createNew"
+        android:layout_alignLeft="@+id/passLogin"
+        android:layout_alignStart="@+id/passLogin"
+        android:id="@+id/loginBut"
+        android:fontFamily="sans-serif-smallcaps"
+        android:background="#aaa"/>
 
     <Button
         android:text="Create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="normal|bold"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="80dp"
+        android:layout_alignRight="@+id/passLogin"
+        android:layout_alignEnd="@+id/passLogin"
+        android:background="#aaa"
         android:id="@+id/createNew" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:layout_above="@+id/mailLogin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="21dp"
+        android:id="@+id/imageView2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginBottom="24dp"
+        android:textStyle="normal|bold"
+        android:id="@+id/passLogin"
+        android:background="@drawable/shape"
+        android:hint="Password"
+        android:layout_above="@+id/loginBut"
+        android:layout_alignLeft="@+id/mailLogin"
+        android:layout_alignStart="@+id/mailLogin" />
 </RelativeLayout>
